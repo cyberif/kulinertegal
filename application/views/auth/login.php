@@ -9,16 +9,17 @@
             <div class="pt-4 pb-2">
               <h5 class="card-title text-center pb-0 fs-4">Login</h5>
             </div>
-
-            <form class="row g-3" method="POST" action="">
+            <?= $this->session->flashdata('pesan'); ?>
+            <form class="row g-3" method="POST" action="<?= base_url('auth'); ?>">
+              <div class="col-12">
+                <input placeholder="Email" type="email" name="email" class="form-control rounded-pill" id="email" value="<?= set_value('email'); ?>">
+              </div>
+              <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
 
               <div class="col-12">
-                <input placeholder="Email" type="email" name="email" class="form-control rounded-pill" id="email" required>
+                <input placeholder="Password" type="password" name="password" class="form-control rounded-pill" id="password">
               </div>
-
-              <div class="col-12">
-                <input placeholder="Password" type="password" name="password" class="form-control rounded-pill" id="password" required>
-              </div>
+              <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
               <div class="col-12">
                 <button class="btn-submit w-100 rounded-pill" type="submit">Login</button>
               </div>
@@ -29,7 +30,7 @@
             </form>
             <hr class="mb-1">
             <div class="col-12 mt-0">
-              <p class="small mb-0 text-center">Create an account? <a href="<?= base_url('auth/register'); ?>">Log in</a></p>
+              <p class="small mb-0 text-center">Create an account? <a href="<?= base_url('auth/register'); ?>">Register</a></p>
             </div>
           </div>
         </div>

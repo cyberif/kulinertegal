@@ -67,25 +67,28 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="<?= base_url('pengunjung'); ?>">Home</a>
+                        <a class="nav-link" aria-current="page" href="<?= base_url('user'); ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Warung</a>
+                        <a class="nav-link" aria-current="page" href="<?= base_url('user/warung'); ?>">Warung</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="<?= base_url('pengunjung/aboutus'); ?>">About Us</a>
+                        <a class="nav-link" aria-current="page" href="<?= base_url('user/aboutus'); ?>">About Us</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Others
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item text-secondary" href="<?= base_url('auth/register'); ?>">Register</a></li>
-                            <li><a class="dropdown-item text-secondary" href="<?= base_url('auth'); ?>">Login</a></li>
+                            <li><a class="dropdown-item text-secondary" href="<?= base_url('user/profile'); ?>">profile</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item text-secondary" href="<?= base_url('pengunjung/kritik'); ?>">Kritik & Saran</a></li>
+                            <li><a class="dropdown-item text-secondary" href="<?= base_url('user/kritik'); ?>">Kritik & Saran</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-secondary" href="<?= base_url('auth/logout'); ?>">Log Out</a></li>
                         </ul>
                     </li>
                 </ul>
