@@ -1,7 +1,7 @@
 <div class="container-fluid bg-dark mt-4">
     <div class="row d-flex justify-content-around">
         <div class="col-7">
-            <h4 class="fs-3 text-warning text-center">About Us</h4>
+            <h4 class="sub-judul fs-3 text-warning text-center">About Us</h4>
         </div>
     </div>
     <div class="row d-flex justify-content-around">
@@ -27,7 +27,7 @@
 <div class="container-fluid bg-dark mt-4">
     <div class="row d-flex justify-content-around mb-5">
         <div class="col-7">
-            <h4 class="fs-3 text-warning text-center">Development Team</h4>
+            <h4 class="sub-judul fs-3 text-warning text-center">Development Team</h4>
         </div>
     </div>
     <div class="row d-flex justify-content-around">

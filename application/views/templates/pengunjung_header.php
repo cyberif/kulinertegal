@@ -41,11 +41,13 @@
     <style>
         .sub-judul,
         footer h5,
+        h6,
         .copyright {
             font-family: 'Lobster', cursive;
         }
 
         .btn,
+        .p-team,
         footer a {
             font-family: 'Josefin Sans', sans-serif;
         }

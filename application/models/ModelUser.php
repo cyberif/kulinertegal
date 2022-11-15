@@ -11,23 +11,14 @@ class ModelUser extends CI_Model
         return $this->db->get_where('user', $where);
     }
 
+
     public function simpanData($data = null)
     {
         return $this->db->insert('user', $data);
     }
 
-    public function tampilUser()
+    public function cekUser($where = null)
     {
-        return $this->db->get('user')->result_array();
-    }
-
-    public function jmlUser()
-    {
-        $query = $this->db->get('user');
-        if ($query->num_rows() > 0) {
-            return $query->num_rows();
-        } else {
-            return 0;
-        }
+        return $this->db->get_where('user', $where);
     }
 }

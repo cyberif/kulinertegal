@@ -14,24 +14,23 @@
                             <div class="col-12">
                                 <input type="text" placeholder="Nama" name="nama" class="form-control rounded-pill" id="yourName" value="<?= set_value('nama'); ?>">
                             </div>
-                            <?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
+                            <?= form_error('nama', '<small class="text-danger ps-3">', '</small>'); ?>
 
                             <div class="col-12">
                                 <input type="email" placeholder="Email" name="email" class="form-control rounded-pill" id="yourEmail" value="<?= set_value('email'); ?>">
                             </div>
-                            <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
+                            <?= form_error('email', '<small class="text-danger ps-3">', '</small>'); ?>
 
                             <div class="col-12">
                                 <div class="row g-3">
                                     <div class="col-lg-6">
                                         <input type="password" placeholder="Password" name="password1" class="form-control rounded-pill" id="yourPassword" required>
                                     </div>
-                                    <?= form_error('password1', '<small class="text-danger pl-3">', '</small>'); ?>
-
                                     <div class="col-lg-6">
                                         <input type="password" placeholder="Repeat Password" name="password2" class="form-control rounded-pill" id="yourPassword" required>
                                     </div>
                                 </div>
+                                <?= form_error('password1', '<small class="text-danger ps-3">', '</small>'); ?>
                             </div>
                             <div class="col-12">
                                 <button class="btn-submit w-100 rounded-pill" type="submit">Create Account</button>

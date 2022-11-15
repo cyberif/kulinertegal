@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Home Page - Kuliner Tegal</title>
+    <title><?= $title; ?> - Kuliner Tegal</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -41,11 +41,13 @@
     <style>
         .sub-judul,
         footer h5,
+        h6,
         .copyright {
             font-family: 'Lobster', cursive;
         }
 
         .btn,
+        .p-team,
         footer a {
             font-family: 'Josefin Sans', sans-serif;
         }
@@ -79,8 +81,8 @@
                         <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Others
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item text-secondary" href="<?= base_url('user/profile'); ?>">profile</a></li>
+                        <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-secondary" href="<?= base_url('user/profile'); ?>">Profile</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
