@@ -14,10 +14,10 @@
                 <div class="col-lg-5 d-flex flex-column align-items-center">
                     <h5 class="fs-3 text-warning">Development Team</h5>
                     <a href="https://instagram.com/azzhrfqhkm" target="_blank" class="text-light fs-6">Azzah Rifqi</a>
-                    <a href="https://instagram.com/azzhrfqhkm" target="_blank" class="text-light fs-6">Abimanyu Surya</a>
+                    <a href="https://instagram.com/kacangijo_01" target="_blank" class="text-light fs-6">Abimanyu Surya</a>
                     <a href="https://instagram.com/azzhrfqhkm" target="_blank" class="text-light fs-6">Septi Sekar</a>
                     <a href="https://instagram.com/azzhrfqhkm" target="_blank" class="text-light fs-6">Afida Nurul</a>
-                    <a href="https://instagram.com/azzhrfqhkm" target="_blank" class="text-light fs-6">Cindy Ayu</a>
+                    <a href="https://instagram.com/cindyas10" target="_blank" class="text-light fs-6">Cindy Ayu</a>
                 </div>
             </div>
             <div class="row text-center text-light mt-2 mb-2">

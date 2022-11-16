@@ -13,7 +13,8 @@ class Admin extends CI_Controller
     function index()
     {
         $data = [
-            'title' => 'Dashboard'
+            'title' => 'Dashboard',
+            'jmlUser' => $this->ModelUser->cekUser(['role_id' => 3])->num_rows()
         ];
 
         $this->load->view('templates/admin_header', $data);
@@ -36,5 +37,24 @@ class Admin extends CI_Controller
         $this->load->view('admin/sidebar', $data);
         $this->load->view('admin/lihatUser', $data);
         $this->load->view('templates/admin_footer');
+    }
+
+    public function editUser($id)
+    {
+        $data = [
+            'title' => 'Edit User'
+        ];
+
+        $this->load->view('templates/admin_header', $data);
+        $this->load->view('admin/topbar', $data);
+        $this->load->view('admin/sidebar', $data);
+        $this->load->view('admin/editUser', $data);
+        $this->load->view('templates/admin_footer');
+    }
+
+    public function hapusUser($id)
+    {
+        $this->ModelUser->hapusUser($id);
+        redirect('admin/lihatUser');
     }
 }

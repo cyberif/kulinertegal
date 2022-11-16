@@ -21,4 +21,10 @@ class ModelUser extends CI_Model
     {
         return $this->db->get_where('user', $where);
     }
+
+    public function hapusUser($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('user');
+    }
 }
