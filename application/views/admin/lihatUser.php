@@ -51,49 +51,49 @@
                                             <td><?= $u['nama']; ?></td>
                                             <td><?= $u['email']; ?></td>
                                             <td><?= date('d F Y', $u['date_created']); ?></td>
-                                            <td><a href="#" class="btn btn-sm rounded-pill btn-success fw-bold text-light px-3" data-bs-toggle="modal" data-bs-target="#modalEdit">Edit</a></td>
-                                            <td><a href="#" class="btn btn-sm rounded-pill btn-danger fw-bold text-light px-3" data-bs-toggle="modal" data-bs-target="#modalHapus">Hapus</a></td>
+                                            <td><a href="#" class="btn btn-sm rounded-pill btn-success fw-bold text-light px-3" data-bs-toggle="modal" data-bs-target="<?= '#edit' . $u['id'] ?>">Edit</a></td>
+                                            <td><a href="#" class="btn btn-sm rounded-pill btn-danger fw-bold text-light px-3" data-bs-toggle="modal" data-bs-target="<?= '#hapus' . $u['id'] ?>">Hapus</a></td>
                                         </tr>
+                                        <!-- Basic Modal -->
+                                        <div class="modal fade" id="<?= 'edit' . $u['id'] ?>" tabindex="-1">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Yakin Edit Data?</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <span class="fs-6">Pilih <span class="fw-bold text-success">Edit</span> untuk mengubah data.</span>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+                                                        <a type="button" class="btn btn-success" href="<?= base_url('admin/editUser/' . $u['id']); ?>">Edit</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="<?= 'hapus' . $u['id'] ?>" tabindex="-1">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Yakin Hapus Data?</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <span class="fs-6">Pilih <span class="fw-bold text-danger">Hapus</span> untuk menghapus data.</span>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Batal</button>
+                                                        <a type="button" class="btn btn-danger" href="<?= base_url('admin/hapusUser/' . $u['id']); ?>">Hapus</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Basic Modal-->
                                     <?php endforeach ?>
                                 </tbody>
                             </table>
-                            <!-- Basic Modal -->
-                            <div class="modal fade" id="modalEdit" tabindex="-1">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Yakin Edit Data?</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <span class="fs-6">Pilih <span class="fw-bold text-success">Edit</span> untuk mengubah data.</span>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
-                                            <a type="button" class="btn btn-success" href="<?= base_url('admin/editUser/' . $u['id']); ?>">Edit</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal fade" id="modalHapus" tabindex="-1">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Yakin Hapus Data?</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <span class="fs-6">Pilih <span class="fw-bold text-danger">Hapus</span> untuk menghapus data.</span>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Batal</button>
-                                            <a type="button" class="btn btn-danger" href="<?= base_url('admin/hapusUser/' . $u['id']); ?>">Hapus</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <!-- End Basic Modal-->
 
                         </div>
 
