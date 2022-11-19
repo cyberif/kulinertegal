@@ -3,12 +3,13 @@
     <div class="pagetitle">
         <h1><?= $title; ?></h1>
     </div><!-- End Page Title -->
-
     <section class="section dashboard">
         <div class="row">
-
             <!-- Left side columns -->
             <div class="col-lg-8">
+                <a href="<?= base_url('admin/tambahUser'); ?>" class="btn btn-primary fw-bold text-light mb-2"><i class="bi bi-plus-circle me-1"></i>Tambah</a>
+
+                <?= $this->session->flashdata('pesan'); ?>
                 <!-- Top Selling -->
                 <div class="col-12">
                     <div class="card top-selling overflow-auto">
@@ -28,7 +29,7 @@
                         </div>
 
                         <div class="card-body pb-0">
-                            <h5 class="card-title">Data User <span>| <?= $jmlUser; ?> results</span></h5>
+                            <h5 class="card-title">User <span>| <?= $jmlUser; ?> results</span></h5>
 
                             <table class="table table-borderless">
                                 <thead>
@@ -63,7 +64,7 @@
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <span class="fs-6">Pilih <span class="fw-bold text-success">Edit</span> untuk mengubah data.</span>
+                                                        <span class="fs-6">Pilih <span class="fw-bold text-success">Edit</span> untuk mengubah user <span class="fw-bold text-primary"><?= $u['nama']; ?></span>.</span>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
@@ -80,7 +81,7 @@
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <span class="fs-6">Pilih <span class="fw-bold text-danger">Hapus</span> untuk menghapus data.</span>
+                                                        <span class="fs-6">Pilih <span class="fw-bold text-danger">Hapus</span> untuk menghapus user <span class="fw-bold text-primary"><?= $u['nama']; ?></span>.</span>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-success" data-bs-dismiss="modal">Batal</button>

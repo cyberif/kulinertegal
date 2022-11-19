@@ -13,30 +13,43 @@
                 <div class="col-12">
                     <div class="card top-selling overflow-auto">
                         <div class="card-body pb-0">
-                            <h5 class="card-title">Form Edit <span>| User ID <?= $user['id']; ?></span></h5>
+                            <h5 class="card-title">Form User Baru</h5>
 
                             <!-- Floating Labels Form -->
-                            <form class="row g-3" method="POST" action="<?= base_url('admin/editUser/' . $user['id']); ?>">
-                                <input type="hidden" name="id" value="<?= $user['id']; ?>">
-                                <input type="hidden" name="is_active" value="<?= $user['is_active']; ?>">
-                                <input type="hidden" name="password" value="<?= $user['password']; ?>">
-                                <input type="hidden" name="image" value="<?= $user['image']; ?>">
-                                <input type="hidden" name="date_created" value="<?= $user['date_created']; ?>">
-                                <input type="hidden" name="email" value="<?= $user['email']; ?>">
-                                <div class="col-md-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="floatingName" placeholder="User Name" name="nama" value="<?= $user['nama']; ?>">
-                                        <label for="floatingName">User Name</label>
+                            <form class="row g-3" method="POST" action="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="floatingName" placeholder="User Name" name="nama">
+                                            <label for="floatingName">User Name</label>
+                                        </div>
+                                    </div>
+                                    <?= form_error('nama', '<small class="text-danger ps-3">', '</small>'); ?>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="floatingName" placeholder="User Email" name="email">
+                                            <label for="floatingName">User Email</label>
+                                        </div>
+                                    </div>
+                                    <?= form_error('email', '<small class="text-danger ps-3">', '</small>'); ?>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="floatingName" placeholder="Password" name="password1">
+                                            <label for="floatingName">Password</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="floatingName" placeholder="Repeat Password" name="password2">
+                                            <label for="floatingName">Repeat Password</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <?= form_error('nama', '<small class="text-danger ps-3">', '</small>'); ?>
-                                <div class="col-md-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="floatingName" placeholder="User Name" name="role_id" value="<?= $user['role_id']; ?>">
-                                        <label for="floatingName">User Role</label>
-                                    </div>
-                                </div>
-                                <?= form_error('role_id', '<small class="text-danger ps-3">', '</small>'); ?>
+                                <?= form_error('password1', '<small class="text-danger ps-3">', '</small>'); ?>
 
                                 <div class="text-center mb-4">
                                     <button type="submit" class="btn btn-primary">Save Changes</button>

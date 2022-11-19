@@ -27,4 +27,16 @@ class ModelUser extends CI_Model
         $this->db->where('id', $id);
         $this->db->delete('user');
     }
+
+    public function getIdUser($id)
+    {
+        return $this->db->get_where('user', ['id' => $id])->row_array();
+    }
+
+    public function editUser_proses($data = null)
+    {
+        $id = $this->input->post('id');
+        $this->db->where('id', $id);
+        $this->db->update('user', $data);
+    }
 }
