@@ -13,10 +13,10 @@
                 <div class="col-12">
                     <div class="card top-selling overflow-auto">
                         <div class="card-body pb-0">
-                            <h5 class="card-title">Form User Baru</h5>
+                            <h5 class="card-title">Form Warung Baru</h5>
 
                             <!-- Floating Labels Form -->
-                            <form class="row g-3" method="POST" action="<?= base_url('admin/tambahUser'); ?>">
+                            <form class="row g-3" method="POST" action="<?= base_url('admin/tambahWarung'); ?>">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-floating">
@@ -52,7 +52,7 @@
                                 <?= form_error('password1', '<small class="text-danger ps-3">', '</small>'); ?>
 
                                 <div class="text-center mb-4">
-                                    <button type="submit" class="btn btn-primary">Add User</button>
+                                    <button type="submit" class="btn btn-primary">Add Warung</button>
                                     <button type="reset" class="btn btn-secondary">Reset</button>
                                 </div>
                             </form><!-- End floating Labels Form -->
