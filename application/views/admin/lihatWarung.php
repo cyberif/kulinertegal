@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="card-body pb-0">
-                            <h5 class="card-title">User <span>| <?= $jmlUser; ?> results</span></h5>
+                            <h5 class="card-title">User Warung <span>| <?= $jmlUser; ?> results</span></h5>
 
                             <table class="table table-borderless">
                                 <thead>

@@ -6,19 +6,25 @@ class ModelMenu extends CI_Model
     private $table = 'table';
     private $pk    = 'pk';
 
-    public function tampilMenu()
-    {
-        return $this->db->get('wmenu')->result_array();
-    }
-
     public function tambahMenu($data = null)
     {
         return $this->db->insert('wmenu', $data);
     }
 
-    public function jmlMenu()
+    public function hapusMenu($id)
     {
-        $query = $this->db->get('wmenu');
+        $this->db->where('id', $id);
+        $this->db->delete('wmenu');
+    }
+
+    public function getMenu($where = null)
+    {
+        return $this->db->get_where('wmenu', $where)->result_array();
+    }
+
+    public function jmlMenu($where = null)
+    {
+        $query = $this->db->get_where('wmenu', $where);
         return $query->num_rows();
     }
 }

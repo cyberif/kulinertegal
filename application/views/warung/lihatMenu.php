@@ -28,32 +28,28 @@
                         </div>
 
                         <div class="card-body pb-0">
-                            <h5 class="card-title">User <span>| <?= $jmlUser; ?> results</span></h5>
+                            <h5 class="card-title">Menu <span>| <?= $jmlMenu; ?> results</span></h5>
 
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">ID</th>
                                         <th scope="col">Nama</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Date Created</th>
+                                        <th scope="col">Harga</th>
                                         <th scope="col">Hapus</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $i = 1; ?>
-                                    <?php foreach ($user as $u) : ?>
+                                    <?php foreach ($menu as $m) : ?>
                                         <tr>
                                             <td class="fw-bold"><?= $i++; ?></td>
-                                            <td><?= $u['id']; ?></td>
-                                            <td><?= $u['nama']; ?></td>
-                                            <td><?= $u['email']; ?></td>
-                                            <td><?= date('d F Y', $u['date_created']); ?></td>
-                                            <td><a href="#" class="btn btn-sm rounded-pill btn-danger fw-bold text-light px-3" data-bs-toggle="modal" data-bs-target="<?= '#hapus' . $u['id'] ?>">Hapus</a></td>
+                                            <td><?= $m['nama']; ?></td>
+                                            <td><?= $m['harga']; ?></td>
+                                            <td><a href="#" class="btn btn-sm rounded-pill btn-danger fw-bold text-light px-3" data-bs-toggle="modal" data-bs-target="<?= '#hapus' . $m['id'] ?>">Hapus</a></td>
                                         </tr>
                                         <!-- Basic Modal -->
-                                        <div class="modal fade" id="<?= 'hapus' . $u['id'] ?>" tabindex="-1">
+                                        <div class="modal fade" id="<?= 'hapus' . $m['id'] ?>" tabindex="-1">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -61,11 +57,11 @@
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <span class="fs-6">Pilih <span class="fw-bold text-danger">Hapus</span> untuk menghapus user <span class="fw-bold text-primary"><?= $u['nama']; ?></span>.</span>
+                                                        <span class="fs-6">Pilih <span class="fw-bold text-danger">Hapus</span> untuk menghapus user <span class="fw-bold text-primary"><?= $m['nama']; ?></span>.</span>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-success" data-bs-dismiss="modal">Batal</button>
-                                                        <a type="button" class="btn btn-danger" href="<?= base_url('admin/hapusUser/' . $u['id']); ?>">Hapus</a>
+                                                        <a type="button" class="btn btn-danger" href="<?= base_url('warung/hapusMenu/' . $m['id']); ?>">Hapus</a>
                                                     </div>
                                                 </div>
                                             </div>

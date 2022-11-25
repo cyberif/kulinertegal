@@ -14,7 +14,9 @@ class Admin extends CI_Controller
     {
         $data = [
             'title' => 'Dashboard',
-            'jmlUser' => $this->ModelUser->cekUser(['role_id' => 3])->num_rows()
+            'jmlUser' => $this->ModelUser->cekUser(['role_id' => 3])->num_rows(),
+            'jmlUserWarung' => $this->ModelUser->cekUser(['role_id' => 2])->num_rows(),
+            'jmlWarung' => $this->ModelWarung->jmlWarung()
         ];
 
         $this->load->view('templates/admin_header', $data);
@@ -214,6 +216,14 @@ class Admin extends CI_Controller
     public function hapusUser($id)
     {
         $this->ModelUser->hapusUser($id);
+        $this->session->set_flashdata(
+            'pesan',
+            '<div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+                <i class="bi bi-check-circle me-1"></i>
+                <b>Sukses!</b> Data telah dihapus.
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>'
+        );
         redirect('admin/lihatUser');
     }
 

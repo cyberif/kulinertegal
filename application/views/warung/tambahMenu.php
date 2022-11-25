@@ -18,6 +18,7 @@
                             <!-- Floating Labels Form -->
                             <form class="row g-3" method="POST" action="<?= base_url('warung/tambahMenu'); ?>">
                                 <input type="hidden" name="id_warung" value="<?= $warung['id']; ?>">
+                                <input type="hidden" name="email" value="<?= $warung['email']; ?>">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-floating">
