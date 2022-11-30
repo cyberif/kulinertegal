@@ -52,7 +52,7 @@
                                 <?= form_error('password1', '<small class="text-danger ps-3">', '</small>'); ?>
 
                                 <div class="text-center mb-4">
-                                    <button type="submit" class="btn btn-primary">Add Warung</button>
+                                    <button type="submit" class="btn btn-warning">Add Warung</button>
                                     <button type="reset" class="btn btn-secondary">Reset</button>
                                 </div>
                             </form><!-- End floating Labels Form -->

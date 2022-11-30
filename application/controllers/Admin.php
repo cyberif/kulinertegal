@@ -173,9 +173,6 @@ class Admin extends CI_Controller
         $this->form_validation->set_rules('nama', 'Nama Lengkap', 'required', [
             'required' => 'Nama belum diisi!!!'
         ]);
-        $this->form_validation->set_rules('role_id', 'Role ID', 'required', [
-            'required' => 'Role belum diisi!!!'
-        ]);
 
         if ($this->form_validation->run() == false) {
             $data = [

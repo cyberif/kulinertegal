@@ -37,7 +37,7 @@
                             </div>
                             <div class="col-12">
                                 <p class="text-center fw-bold">OR</p>
-                                <button class="btn-google w-100 rounded-pill" type="button"><i class="fa-brands fa-google me-2"></i>Log In With Google</button>
+                                <button class="btn-google w-100 rounded-pill" type="button" href="#" data-bs-toggle="modal" data-bs-target="#modalGoogle"><i class="fa-brands fa-google me-2"></i>Log In With Google</button>
                             </div>
                         </form>
                         <hr class="mb-1">
@@ -46,6 +46,35 @@
                         </div>
 
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Josefin+Sans&family=Lobster&display=swap');
+
+        .modal-title,
+        .modal-footer {
+            font-family: 'Lobster', cursive;
+        }
+
+        .modal-body {
+            font-family: 'Josefin Sans', sans-serif;
+        }
+    </style>
+
+    <div class="modal fade" id="modalGoogle" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title text-warning">Information</h5>
+                    <button type="button" class="btn-close bg-warning" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-light">
+                    <span class="fs-6">Fitur <span class="fw-bold text-warning">Login With Google</span> belum tersedia.</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Kembali</button>
                 </div>
             </div>
         </div>

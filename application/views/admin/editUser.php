@@ -23,6 +23,7 @@
                                 <input type="hidden" name="image" value="<?= $user['image']; ?>">
                                 <input type="hidden" name="date_created" value="<?= $user['date_created']; ?>">
                                 <input type="hidden" name="email" value="<?= $user['email']; ?>">
+                                <input type="hidden" name="role_id" value="<?= $user['role_id']; ?>">
                                 <div class="col-md-12">
                                     <div class="form-floating">
                                         <input type="text" class="form-control" id="floatingName" placeholder="User Name" name="nama" value="<?= $user['nama']; ?>">
@@ -30,13 +31,6 @@
                                     </div>
                                 </div>
                                 <?= form_error('nama', '<small class="text-danger ps-3">', '</small>'); ?>
-                                <div class="col-md-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="floatingName" placeholder="User Name" name="role_id" value="<?= $user['role_id']; ?>">
-                                        <label for="floatingName">User Role</label>
-                                    </div>
-                                </div>
-                                <?= form_error('role_id', '<small class="text-danger ps-3">', '</small>'); ?>
 
                                 <div class="text-center mb-4">
                                     <button type="submit" class="btn btn-primary">Save Changes</button>

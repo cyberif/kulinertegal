@@ -17,6 +17,13 @@
                 <span>Lihat Menu</span>
             </a>
         </li>
+        <li class="nav-heading">Edit</li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="<?= base_url('warung/editWarungku'); ?>">
+                <i class="bi bi-shop"></i>
+                <span>Warungku</span>
+            </a>
+        </li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="<?= base_url('warung/profile'); ?>">
                 <i class="bi bi-person"></i>

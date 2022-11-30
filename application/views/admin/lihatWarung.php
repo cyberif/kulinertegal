@@ -7,7 +7,7 @@
         <div class="row">
             <!-- Left side columns -->
             <div class="col-lg-8">
-                <a href="<?= base_url('admin/tambahWarung'); ?>" class="btn btn-primary fw-bold text-light mb-2"><i class="bi bi-plus-circle me-1"></i>Tambah</a>
+                <a href="<?= base_url('admin/tambahWarung'); ?>" class="btn btn-warning fw-bold mb-2"><i class="bi bi-plus-circle me-1"></i>Tambah</a>
 
                 <!-- Top Selling -->
                 <div class="col-12">

@@ -186,7 +186,22 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6 col-lg-3 mx-auto">
+        <?php foreach ($beverages as $b) : ?>
+            <div class="col-6 col-lg-3 mx-auto">
+                <div class="card">
+                    <img src="<?= base_url('assets/img/warung/') . $b['image']; ?>" class="card-img-top" alt="<?= $b['image']; ?>" style="height: 170px;">
+                    <div class="card-body">
+                        <h5 class="card-text mb-0 fw-bold"><?= $b['nama']; ?></h5>
+                        <small class="card-text mt-0 fw-light"><?= $b['alamat']; ?></small>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="float-end btn btn-dark text-warning rounded-pill fw-bold disabled">View
+                            More</a>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach ?>
+        <!-- <div class="col-6 col-lg-3 mx-auto">
             <div class="card">
                 <img src="assets/img/image1.png" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -236,15 +251,15 @@
                     <a href="#" class="float-end btn btn-dark text-warning rounded-pill fw-bold disabled">View
                         More</a>
                 </div>
+            </div>
+        </div>
+    </div> -->
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <a class="btn btn-warning rounded-pill text-dark fw-bold disabled" href="/">See More</a>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col d-flex justify-content-center">
-            <a class="btn btn-warning rounded-pill text-dark fw-bold disabled" href="/">See More</a>
-        </div>
-    </div>
-</div>
-<!-- END BEVERAGES -->
+    <!-- END BEVERAGES -->
 
-<!-- End Main Content -->
+    <!-- End Main Content -->

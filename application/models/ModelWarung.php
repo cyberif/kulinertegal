@@ -11,9 +11,20 @@ class ModelWarung extends CI_Model
         return $this->db->get('warung')->result_array();
     }
 
+    public function warungWhere($where = null)
+    {
+        return $this->db->get_where('warung', $where)->result_array();
+    }
+
     public function jmlWarung()
     {
         $query = $this->db->get('warung');
         return $query->num_rows();
+    }
+
+    public function hapusWarung($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('warung');
     }
 }

@@ -143,7 +143,7 @@ class Auth extends CI_Controller
             $this->session->set_flashdata(
                 'pesan',
                 '<div class="alert alert-success alert-message" role="alert">
-                    <b>Selamat!</b> Akun anda telah dibuat. Silahkan aktivasi akun anda!
+                    <b>Selamat!</b> Akun anda telah dibuat!
                 </div>'
             );
             redirect('auth');

@@ -41,11 +41,22 @@
                                 </thead>
                                 <tbody>
                                     <?php $i = 1; ?>
+
                                     <?php foreach ($warung as $w) : ?>
+                                        <?php
+                                        $kategori = $w['id_wkategori'];
+                                        if ($kategori == 2) {
+                                            $kategori = "Foods";
+                                        } elseif ($kategori == 3) {
+                                            $kategori = "Beverages";
+                                        } else {
+                                            $kategori = "Foods & Beverages";
+                                        }
+                                        ?>
                                         <tr>
                                             <td class="fw-bold"><?= $i++; ?></td>
                                             <td><?= $w['id']; ?></td>
-                                            <td><?= $w['id_wkategori']; ?></td>
+                                            <td><?= $kategori; ?></td>
                                             <td><?= $w['nama']; ?></td>
                                             <td><?= $w['alamat']; ?></td>
                                             <td><a href="#" class="btn btn-sm rounded-pill btn-danger fw-bold text-light px-3" data-bs-toggle="modal" data-bs-target="<?= '#hapus' . $w['id'] ?>">Hapus</a></td>

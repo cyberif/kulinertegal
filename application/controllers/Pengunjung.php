@@ -12,8 +12,11 @@ class Pengunjung extends CI_Controller
 
     function index()
     {
+        $data = [
+            'beverages' => $this->ModelWarung->warungWhere(['id_wkategori' => 3])
+        ];
         $this->load->view('templates/pengunjung_header');
-        $this->load->view('pengunjung/index');
+        $this->load->view('pengunjung/index', $data);
         $this->load->view('templates/pengunjung_footer');
     }
 

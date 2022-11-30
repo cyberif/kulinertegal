@@ -1,6 +1,9 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Josefin+Sans&family=Lobster&display=swap');
+</style>
 <div class="d-flex align-items-center justify-content-between">
     <a href="<?= base_url('warung'); ?>" class="logo d-flex align-items-center">
-        <span class="d-none d-lg-block">WarungKu</span>
+        <span class="d-none d-lg-block fs-2 ms-2" style="font-family: 'Lobster', cursive;">Warungku</span>
     </a>
     <i class="bi bi-list toggle-sidebar-btn"></i>
 </div><!-- End Logo -->

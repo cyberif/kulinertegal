@@ -1,7 +1,9 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Josefin+Sans&family=Lobster&display=swap');
+</style>
 <div class="d-flex align-items-center justify-content-between">
     <a href="<?= base_url('admin'); ?>" class="logo d-flex align-items-center">
-        <img src="<?= base_url('assets/'); ?>img/Logoweb.png" alt="">
-        <span class="d-none d-lg-block">Admin</span>
+        <span class="d-none d-lg-block fs-2 ms-2" style="font-family: 'Lobster', cursive;">Admin</span>
     </a>
     <i class="bi bi-list toggle-sidebar-btn"></i>
 </div><!-- End Logo -->
