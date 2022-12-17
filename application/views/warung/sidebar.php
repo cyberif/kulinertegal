@@ -17,6 +17,13 @@
                 <span>Lihat Menu</span>
             </a>
         </li>
+        <li class="nav-heading">Paket</li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="<?= base_url('warung/lihatPaket'); ?>">
+                <i class="bx bx-food-menu"></i>
+                <span>Lihat Paket</span>
+            </a>
+        </li>
         <li class="nav-heading">Edit</li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="<?= base_url('warung/editWarungku'); ?>">

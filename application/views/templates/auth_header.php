@@ -6,8 +6,11 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title><?= $title; ?></title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="Kuliner Tegal" name="description">
+  <meta content="Kuliner Tegal" name="keywords">
+
+  <!-- Favicons -->
+  <link href="<?= base_url('assets/'); ?>img/Logoweb.png" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -22,7 +25,6 @@
   <link href="<?= base_url('assets/'); ?>vendor/quill/quill.snow.css" rel="stylesheet">
   <link href="<?= base_url('assets/'); ?>vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="<?= base_url('assets/'); ?>vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="<?= base_url('assets/'); ?>vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="<?= base_url('assets/'); ?>css/style.css" rel="stylesheet">

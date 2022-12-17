@@ -4,11 +4,10 @@
             <div class="row d-flex justify-content-around">
                 <div class="col-lg-5 d-flex flex-column align-items-center">
                     <h5 class="fs-3 text-warning">Kuliner Tegal</h5>
-                    <a href="<?= base_url('pengunjung'); ?>" class="text-light fs-6">Home</a>
-                    <a href="<?= base_url('pengunjung/aboutus'); ?>" class="text-light fs-6">About Us</a>
-                    <a href="<?= base_url('pengunjung/kritik'); ?>" class="text-light fs-6">Kritik & Saran</a>
-                    <a href="<?= base_url('auth/register'); ?>" class="text-light fs-6">Register</a>
-                    <a href="<?= base_url('auth'); ?>" class="text-light fs-6">Login</a>
+                    <a href="<?= base_url('user'); ?>" class="text-light fs-6">Home</a>
+                    <a href="<?= base_url('user/warung'); ?>" class="text-light fs-6">Warung</a>
+                    <a href="<?= base_url('user/aboutus'); ?>" class="text-light fs-6">About Us</a>
+                    <a href="<?= base_url('user/kritik'); ?>" class="text-light fs-6">Kritik & Saran</a>
                 </div>
 
                 <div class="col-lg-5 d-flex flex-column align-items-center">

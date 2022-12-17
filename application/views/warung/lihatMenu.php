@@ -21,9 +21,8 @@
                                 </li>
 
                                 <li><a class="dropdown-item" href="">Nama</a></li>
-                                <li><a class="dropdown-item" href="">ID</a></li>
-                                <li><a class="dropdown-item" href="">Email</a></li>
-                                <li><a class="dropdown-item" href="#">Date Created</a></li>
+                                <li><a class="dropdown-item" href="">Harga</a></li>
+
                             </ul>
                         </div>
 
@@ -53,11 +52,11 @@
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title">Yakin Hapus Data?</h5>
+                                                        <h5 class="modal-title">Yakin Hapus Menu?</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <span class="fs-6">Pilih <span class="fw-bold text-danger">Hapus</span> untuk menghapus user <span class="fw-bold text-primary"><?= $m['nama']; ?></span>.</span>
+                                                        <span class="fs-6">Pilih <span class="fw-bold text-danger">Hapus</span> untuk menghapus menu <span class="fw-bold text-primary"><?= $m['nama']; ?></span>.</span>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-success" data-bs-dismiss="modal">Batal</button>

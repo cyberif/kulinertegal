@@ -6,7 +6,7 @@
     <section class="section dashboard">
         <div class="row">
             <!-- Left side columns -->
-            <div class="col-lg-8">
+            <div class="col-lg-10">
                 <a href="<?= base_url('admin/tambahUser'); ?>" class="btn btn-primary fw-bold text-light mb-2"><i class="bi bi-plus-circle me-1"></i>Tambah</a>
 
                 <?= $this->session->flashdata('pesan'); ?>
@@ -40,6 +40,7 @@
                                         <th scope="col">Email</th>
                                         <th scope="col">Date Created</th>
                                         <th scope="col">Edit</th>
+                                        <th scope="col">Jadikan Warung</th>
                                         <th scope="col">Hapus</th>
                                     </tr>
                                 </thead>
@@ -53,6 +54,7 @@
                                             <td><?= $u['email']; ?></td>
                                             <td><?= date('d F Y', $u['date_created']); ?></td>
                                             <td><a href="#" class="btn btn-sm rounded-pill btn-success fw-bold text-light px-3" data-bs-toggle="modal" data-bs-target="<?= '#edit' . $u['id'] ?>">Edit</a></td>
+                                            <td><a href="#" class="btn btn-sm rounded-pill btn-primary fw-bold text-light px-3" data-bs-toggle="modal" data-bs-target="<?= '#jWarung' . $u['id'] ?>">Warung</a></td>
                                             <td><a href="#" class="btn btn-sm rounded-pill btn-danger fw-bold text-light px-3" data-bs-toggle="modal" data-bs-target="<?= '#hapus' . $u['id'] ?>">Hapus</a></td>
                                         </tr>
                                         <!-- Basic Modal -->
@@ -69,6 +71,23 @@
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
                                                         <a type="button" class="btn btn-success" href="<?= base_url('admin/editUser/' . $u['id']); ?>">Edit</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="<?= 'jWarung' . $u['id'] ?>" tabindex="-1">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Yakin Jadikan Warung?</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <span class="fs-6">Pilih <span class="fw-bold text-success">Ubah</span> untuk mengubah user <span class="fw-bold text-primary"><?= $u['nama']; ?></span>.</span>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+                                                        <a type="button" class="btn btn-success" href="<?= base_url('admin/jadikanWarung/' . $u['id']); ?>">Ubah</a>
                                                     </div>
                                                 </div>
                                             </div>

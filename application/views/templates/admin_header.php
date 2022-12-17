@@ -6,12 +6,11 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title><?= $title; ?> - Admin Kuliner Tegal</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="Kuliner Tegal" name="description">
+  <meta content="Kuliner Tegal" name="keywords">
 
   <!-- Favicons -->
-  <link href="<?= base_url('assets/'); ?>img/favicon.png" rel="icon">
-  <link href="<?= base_url('assets/'); ?>img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="<?= base_url('assets/'); ?>img/Logoweb.png" rel="icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

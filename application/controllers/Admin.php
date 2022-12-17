@@ -128,6 +128,10 @@ class Admin extends CI_Controller
             'matches' => 'Password tidak sama!'
         ]);
 
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required', [
+            'required' => 'Alamat belum diisi!'
+        ]);
+
         if ($this->form_validation->run() == false) {
             $data = [
                 'title' => 'Tambah Warung'
@@ -209,6 +213,68 @@ class Admin extends CI_Controller
             redirect('admin/lihatUser');
         }
     }
+    public function jadikanWarung($id)
+    {
+
+        $this->form_validation->set_rules('nama', 'Nama', 'required', [
+            'required' => 'Nama belum diisi!'
+        ]);
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required', [
+            'required' => 'Alamat belum diisi!'
+        ]);
+
+        if ($this->form_validation->run() == false) {
+            $data = [
+                'title' => 'Jadikan Warung',
+                'user' => $this->ModelUser->getIdUser($id)
+            ];
+
+            $this->load->view('templates/admin_header', $data);
+            $this->load->view('admin/topbar', $data);
+            $this->load->view('admin/sidebar', $data);
+            $this->load->view('admin/jadikan_warung', $data);
+            $this->load->view('templates/admin_footer');
+        } else {
+            $email = $this->input->post('email');
+            $dataUser = [
+                'nama' => htmlspecialchars($this->input->post('nama', true)),
+                'email' => htmlspecialchars($email),
+                'image' => $this->input->post('image'),
+                'password' => $this->input->post('password'),
+                'role_id' => 2,
+                'is_active' => $this->input->post('is_active'),
+                'date_created' => $this->input->post('date_created')
+            ];
+
+            $this->ModelUser->editUser_proses($dataUser);
+            $dataWarung = [
+                'id' => htmlspecialchars($this->input->post('id')),
+                'id_wkategori' => 1,
+                'wilayah' => 'Tegal',
+                'hari_buka' => 'Setiap Hari',
+                'waktu_buka' => '00.00',
+                'waktu_tutup' => '00.00',
+                'no_wa' => '#',
+                'instagram' => '#',
+                'gofood' => '#',
+                'nama' => htmlspecialchars($this->input->post('nama', true)),
+                'alamat' => htmlspecialchars($this->input->post('alamat', true)),
+                'image' => 'warung.jpg',
+                'date_created' => time()
+            ];
+
+            $this->ModelWarung->tambahWarung($dataWarung);
+            $this->session->set_flashdata(
+                'pesan',
+                '<div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+                    <i class="bi bi-check-circle me-1"></i>
+                    <b>Sukses!</b> User telah diubah menjadi Warung. 
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>'
+            );
+            redirect('admin/lihatWarung');
+        }
+    }
 
     public function hapusUser($id)
     {
@@ -222,6 +288,21 @@ class Admin extends CI_Controller
             </div>'
         );
         redirect('admin/lihatUser');
+    }
+
+    public function hapusWarung($id)
+    {
+        $this->ModelUser->hapusUser($id);
+        $this->ModelWarung->hapusWarung($id);
+        $this->session->set_flashdata(
+            'pesan',
+            '<div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+                <i class="bi bi-check-circle me-1"></i>
+                <b>Sukses!</b> Data telah dihapus.
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>'
+        );
+        redirect('admin/lihatWarung');
     }
 
     function lihatWarung()

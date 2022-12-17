@@ -8,7 +8,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="10000">
-                <img src="assets/img/cafe.jpg" class="d-block w-100" alt="carousel-1" style="height: 50vh; filter: blur(2.5px) brightness(70%)" />
+                <img src="assets/img/cafe.jpg" class="d-block w-100" alt="carousel-1" style="height: 70vh; filter: blur(2.5px) brightness(70%)" />
                 <div class="carousel-caption">
                     <h5>Kuliner Tegal</h5>
                     <p>Website Informasi Tentang Kuliner</p>
@@ -16,14 +16,14 @@
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="10000">
-                <img src="assets/img/cafe.jpg" class="d-block w-100" alt="carousel-2" style="height: 50vh; filter: blur(2.5px)" />
+                <img src="assets/img/cafe.jpg" class="d-block w-100" alt="carousel-2" style="height: 70vh; filter: blur(2.5px)" />
                 <div class="carousel-caption">
                     <h5>Foods</h5>
                     <p>Tersedia Berbagai Macam Makanan</p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="10000">
-                <img src="assets/img/cafe.jpg" class="d-block w-100" alt="carousel-3" style="height: 50vh; filter: blur(2.5px)" />
+                <img src="assets/img/cafe.jpg" class="d-block w-100" alt="carousel-3" style="height: 70vh; filter: blur(2.5px)" />
                 <div class="carousel-caption">
                     <h5>Beverages</h5>
                     <p>Tersedia Berbagai Macam Minuman</p>
@@ -42,7 +42,7 @@
 </div>
 <!-- carousel image END -->
 <!-- Start Main Content -->
-<!-- START HOTS -->
+<!-- START FnB -->
 <div class="container-fluid p-4">
     <div class="row mt-3">
         <div class="col">
@@ -50,58 +50,21 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6 col-lg-3 mx-auto">
-            <div class="card">
-                <img src="assets/img/image1.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Tahu Aci Banjaran</h5>
-                    <small class="card-text">Jalan Soetomo No. 12, Slawi, Kab. Tegal</small>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="float-end btn btn-dark text-warning rounded-pill fw-bold disabled">View
-                        More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3 mx-auto">
-            <div class="card">
-                <img src="assets/img/image1.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Tahu Aci Banjaran</h5>
-                    <small class="card-text">Jalan Soetomo No. 12, Slawi, Kab. Tegal</small>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="float-end btn btn-dark text-warning rounded-pill fw-bold disabled">View
-                        More</a>
+        <?php foreach ($foodsnbevs as $fnb) : ?>
+            <div class="col-6 col-lg-3 mx-auto">
+                <div class="card">
+                    <img src="<?= base_url('assets/img/warung/') . $fnb['image']; ?>" class="card-img-top" alt="<?= $fnb['image']; ?>" style="height: 170px;">
+                    <div class="card-body">
+                        <h5 class="card-text mb-0 fw-bold"><?= $fnb['nama']; ?></h5>
+                        <small class="card-text mt-0 fw-light"><?= $fnb['alamat']; ?></small>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="float-end btn btn-dark text-warning rounded-pill fw-bold disabled">View
+                            More</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-6 col-lg-3 mx-auto">
-            <div class="card">
-                <img src="assets/img/image1.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Tahu Aci Banjaran</h5>
-                    <small class="card-text">Jalan Soetomo No. 12, Slawi, Kab. Tegal</small>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="float-end btn btn-dark text-warning rounded-pill fw-bold disabled">View
-                        More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3 mx-auto">
-            <div class="card">
-                <img src="assets/img/image1.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Tahu Aci Banjaran</h5>
-                    <small class="card-text">Jalan Soetomo No. 12, Slawi, Kab. Tegal</small>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="float-end btn btn-dark text-warning rounded-pill fw-bold disabled">View
-                        More</a>
-                </div>
-            </div>
-        </div>
+        <?php endforeach ?>
     </div>
     <div class="row">
         <div class="col d-flex justify-content-center">
@@ -109,7 +72,7 @@
         </div>
     </div>
 </div>
-<!-- END HOTS -->
+<!-- END FnB -->
 <!-- START FOODS -->
 <div class="container-fluid p-4">
     <div class="row mt-3">
@@ -118,58 +81,21 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6 col-lg-3 mx-auto">
-            <div class="card">
-                <img src="assets/img/image1.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Tahu Aci Banjaran</h5>
-                    <small class="card-text">Jalan Soetomo No. 12, Slawi, Kab. Tegal</small>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="float-end btn btn-dark text-warning rounded-pill fw-bold disabled">View
-                        More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3 mx-auto">
-            <div class="card">
-                <img src="assets/img/image1.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Tahu Aci Banjaran</h5>
-                    <small class="card-text">Jalan Soetomo No. 12, Slawi, Kab. Tegal</small>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="float-end btn btn-dark text-warning rounded-pill fw-bold disabled">View
-                        More</a>
+        <?php foreach ($foods as $f) : ?>
+            <div class="col-6 col-lg-3 mx-auto">
+                <div class="card">
+                    <img src="<?= base_url('assets/img/warung/') . $f['image']; ?>" class="card-img-top" alt="<?= $f['image']; ?>" style="height: 170px;">
+                    <div class="card-body">
+                        <h5 class="card-text mb-0 fw-bold"><?= $f['nama']; ?></h5>
+                        <small class="card-text mt-0 fw-light"><?= $f['alamat']; ?></small>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="float-end btn btn-dark text-warning rounded-pill fw-bold disabled">View
+                            More</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-6 col-lg-3 mx-auto">
-            <div class="card">
-                <img src="assets/img/image1.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Tahu Aci Banjaran</h5>
-                    <small class="card-text">Jalan Soetomo No. 12, Slawi, Kab. Tegal</small>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="float-end btn btn-dark text-warning rounded-pill fw-bold disabled">View
-                        More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3 mx-auto">
-            <div class="card">
-                <img src="assets/img/image1.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Tahu Aci Banjaran</h5>
-                    <small class="card-text">Jalan Soetomo No. 12, Slawi, Kab. Tegal</small>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="float-end btn btn-dark text-warning rounded-pill fw-bold disabled">View
-                        More</a>
-                </div>
-            </div>
-        </div>
+        <?php endforeach ?>
     </div>
     <div class="row">
         <div class="col d-flex justify-content-center">
@@ -201,59 +127,6 @@
                 </div>
             </div>
         <?php endforeach ?>
-        <!-- <div class="col-6 col-lg-3 mx-auto">
-            <div class="card">
-                <img src="assets/img/image1.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Tahu Aci Banjaran</h5>
-                    <small class="card-text">Jalan Soetomo No. 12, Slawi, Kab. Tegal</small>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="float-end btn btn-dark text-warning rounded-pill fw-bold disabled">View
-                        More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3 mx-auto">
-            <div class="card">
-                <img src="assets/img/image1.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Tahu Aci Banjaran</h5>
-                    <small class="card-text">Jalan Soetomo No. 12, Slawi, Kab. Tegal</small>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="float-end btn btn-dark text-warning rounded-pill fw-bold disabled">View
-                        More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3 mx-auto">
-            <div class="card">
-                <img src="assets/img/image1.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Tahu Aci Banjaran</h5>
-                    <small class="card-text">Jalan Soetomo No. 12, Slawi, Kab. Tegal</small>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="float-end btn btn-dark text-warning rounded-pill fw-bold disabled">View
-                        More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3 mx-auto">
-            <div class="card">
-                <img src="assets/img/image1.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Tahu Aci Banjaran</h5>
-                    <small class="card-text">Jalan Soetomo No. 12, Slawi, Kab. Tegal</small>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="float-end btn btn-dark text-warning rounded-pill fw-bold disabled">View
-                        More</a>
-                </div>
-            </div>
-        </div>
-    </div> -->
         <div class="row">
             <div class="col d-flex justify-content-center">
                 <a class="btn btn-warning rounded-pill text-dark fw-bold disabled" href="/">See More</a>

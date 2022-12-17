@@ -5,21 +5,19 @@
         </div>
     </div>
     <div class="row d-flex justify-content-around">
-        <div class="col-7 d-flex flex-column align-items-center">
-            <p class="text-light">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, ad nulla? Iusto libero non, culpa
-                deserunt commodi aliquam officiis ipsa placeat, eaque nesciunt ea. Maiores quis ipsam quaerat
-                voluptatibus blanditiis!
+        <div class="col-11 col-lg-9 d-flex flex-column align-items-center">
+            <p class="text-light fs-6">
+                <span class="fw-bold fs-4">S</span>emakin maju jaman dan perubahan pola hidup manusia menyebabkan kebutuhan manusia berubah, terutama kebutuhan primer yang salah satunya adalah makanan dan minuman.
+                Dari hal itu, persaingan bisnis di bidang kuliner sangat ketat dan memengaruhi industri makanan dan minuman mulai dari produsen hingga konsumennya. Ditambah dengan kemajuan teknologi yang begitu pesat membuat para pelaku bisnis kuliner dengan mudah memasarkan dan mempromosikan jualannya secara online.
+                “Kuliner Tegal” adalah satu inovasi teknologi dibidang layanan jasa untuk para pelaku bisnis dan masyarakat di daerah Tegal.
             </p>
-            <p class="text-light">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, ad nulla? Iusto libero non, culpa
-                deserunt commodi aliquam officiis ipsa placeat, eaque nesciunt ea. Maiores quis ipsam quaerat
-                voluptatibus blanditiis!
+            <p class="text-light fs-6">
+                <span class="fw-bold fs-4">K</span>uliner Tegal adalah sebuah website yang hadir untuk membantu para pelaku bisnis kuliner di daerah Tegal agar bisa menjual makanannya secara luas.
+                Selain itu, dengan tampilannya yang sederhana membuat masyarakat yang cenderung menyukai layanan yang praktis dan cepat akan dengan mudah mengakses dan menggunakannya.
+                Kuliner Tegal akan membantu para konsumen mendapatkan makanan yang diinginkan dengan mudah dan membantu para pelaku bisnis kuliner memperluas pasar penjualannya
             </p>
-            <p class="text-light">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, ad nulla? Iusto libero non, culpa
-                deserunt commodi aliquam officiis ipsa placeat, eaque nesciunt ea. Maiores quis ipsam quaerat
-                voluptatibus blanditiis!
+            <p class="text-light fs-6">
+                <span class="fw-bold fs-4">K</span>uliner Tegal dapat menjadi solusi bagi para pelaku bisnis untuk menjual makanannya lebih luas dan menjadi solusi masyarakat untuk lebih mudah mendapatkan makanan atau minuman yang diinginkan tanpa terkendala jarak.
             </p>
         </div>
     </div>

@@ -6,7 +6,6 @@
                     <h5 class="fs-3 text-warning">Kuliner Tegal</h5>
                     <a href="<?= base_url('pengunjung'); ?>" class="text-light fs-6">Home</a>
                     <a href="<?= base_url('pengunjung/aboutus'); ?>" class="text-light fs-6">About Us</a>
-                    <a href="<?= base_url('pengunjung/kritik'); ?>" class="text-light fs-6">Kritik & Saran</a>
                     <a href="<?= base_url('auth/register'); ?>" class="text-light fs-6">Register</a>
                     <a href="<?= base_url('auth'); ?>" class="text-light fs-6">Login</a>
                 </div>
@@ -30,12 +29,7 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center bg-warning"><i class="bi bi-arrow-up-short text-dark"></i></a>
     <!-- Vendor JS Files -->
-    <script src="<?= base_url('assets/'); ?>vendor/apexcharts/apexcharts.min.js"></script>
     <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= base_url('assets/'); ?>vendor/chart.js/chart.min.js"></script>
-    <script src="<?= base_url('assets/'); ?>vendor/echarts/echarts.min.js"></script>
-    <script src="<?= base_url('assets/'); ?>vendor/quill/quill.min.js"></script>
-    <script src="<?= base_url('assets/'); ?>vendor/simple-datatables/simple-datatables.js"></script>
     <script src="<?= base_url('assets/'); ?>vendor/tinymce/tinymce.min.js"></script>
     <script src="<?= base_url('assets/'); ?>vendor/php-email-form/validate.js"></script>
 

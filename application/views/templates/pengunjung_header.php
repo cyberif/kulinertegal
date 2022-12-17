@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Home Page - Kuliner Tegal</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <title><?= $title; ?> - Kuliner Tegal</title>
+    <meta content="Kuliner Tegal" name="description">
+    <meta content="Kuliner Tegal" name="keywords">
 
     <!-- Favicons -->
     <link href="<?= base_url('assets/'); ?>img/Logoweb.png" rel="icon">
@@ -21,10 +21,7 @@
     <link href="<?= base_url('assets/'); ?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= base_url('assets/'); ?>vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="<?= base_url('assets/'); ?>vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="<?= base_url('assets/'); ?>vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="<?= base_url('assets/'); ?>vendor/quill/quill.bubble.css" rel="stylesheet">
     <link href="<?= base_url('assets/'); ?>vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="<?= base_url('assets/'); ?>vendor/simple-datatables/style.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="<?= base_url('assets/'); ?>css/style.css" rel="stylesheet">
@@ -62,7 +59,7 @@
     <!-- nav section start -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="<?= base_url('assets/'); ?>img/Logoweb.png" width="80" height="38"></a>
+            <a class="navbar-brand" href="<?= base_url('pengunjung'); ?>"><img src="<?= base_url('assets/'); ?>img/Logoweb.png" width="80" height="38" alt="logo web"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -84,10 +81,6 @@
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item text-secondary" href="<?= base_url('auth/register'); ?>">Register</a></li>
                             <li><a class="dropdown-item text-secondary" href="<?= base_url('auth'); ?>">Login</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item text-secondary" href="<?= base_url('pengunjung/kritik'); ?>">Kritik & Saran</a></li>
                         </ul>
                     </li>
                 </ul>

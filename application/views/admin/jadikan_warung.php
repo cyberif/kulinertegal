@@ -9,264 +9,45 @@
 
             <!-- Left side columns -->
             <div class="col-lg-8">
-                <div class="row">
+                <!-- Top Selling -->
+                <div class="col-12">
+                    <div class="card top-selling overflow-auto">
+                        <div class="card-body pb-0">
+                            <h5 class="card-title">Form Edit <span>| User ID <?= $user['id']; ?></span></h5>
 
-                    <!-- User Card -->
-                    <div class="col-xxl-4 col-md-6">
-                        <div class="card info-card sales-card">
-                            <div class="card-body">
-                                <h5 class="card-title">User <span>| Today</span></h5>
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-people"></i>
-                                    </div>
-                                    <div class="ps-3">
-                                        <h6><?= $jmlUser; ?></h6>
-                                        <span class="text-primary small pt-1 fw-bold">Results</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- End User Card -->
-
-                    <!-- Warung Card -->
-                    <div class="col-xxl-4 col-md-6">
-                        <div class="card info-card revenue-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Warung <span>| Today</span></h5>
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-shop"></i>
-                                    </div>
-                                    <div class="ps-3">
-                                        <h6><?= $jmlWarung; ?></h6>
-                                        <span class="text-success small pt-1 fw-bold">Results</span>
+                            <!-- Floating Labels Form -->
+                            <form class="row g-3" method="POST" action="<?= base_url('admin/jadikanWarung/' . $user['id']); ?>">
+                                <input type="hidden" name="id" value="<?= $user['id']; ?>">
+                                <input type="hidden" name="is_active" value="<?= $user['is_active']; ?>">
+                                <input type="hidden" name="password" value="<?= $user['password']; ?>">
+                                <input type="hidden" name="image" value="<?= $user['image']; ?>">
+                                <input type="hidden" name="date_created" value="<?= $user['date_created']; ?>">
+                                <input type="hidden" name="email" value="<?= $user['email']; ?>">
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingName" placeholder="Nama Warung" name="nama">
+                                        <label for="floatingName">Nama Warung</label>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div><!-- End Warung Card -->
-
-                    <!-- Menu Card -->
-                    <div class="col-xxl-4 col-md-6">
-                        <div class="card info-card customers-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Menu <span>| Today</span></h5>
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-people"></i>
-                                    </div>
-                                    <div class="ps-3">
-                                        <h6>1244</h6>
-                                        <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+                                <?= form_error('nama', '<small class="text-danger ps-3">', '</small>'); ?>
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingName" placeholder="Alamat Warung" name="alamat">
+                                        <label for="floatingName">Alamat Warung</label>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div><!-- End Menu Card -->
+                                <?= form_error('alamat', '<small class="text-danger ps-3">', '</small>'); ?>
 
-                    <!-- Reports -->
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Pie Chart <span>/Today</span></h5>
-                                <!-- Pie Chart -->
-                                <div id="pieChart" style="min-height: 400px;" class="echart"></div>
-
-                                <script>
-                                    document.addEventListener("DOMContentLoaded", () => {
-                                        echarts.init(document.querySelector("#pieChart")).setOption({
-                                            title: {
-                                                text: 'PIE CHART',
-                                                subtext: 'Real Data',
-                                                left: 'center'
-                                            },
-                                            tooltip: {
-                                                trigger: 'item'
-                                            },
-                                            legend: {
-                                                orient: 'vertical',
-                                                left: 'left'
-                                            },
-                                            series: [{
-                                                name: 'Jumlah',
-                                                type: 'pie',
-                                                radius: '50%',
-                                                data: [{
-                                                        value: <?= $jmlUser; ?>,
-                                                        name: 'User'
-                                                    },
-                                                    {
-                                                        value: <?= $jmlWarung; ?>,
-                                                        name: 'Warung'
-                                                    }
-                                                ],
-                                                emphasis: {
-                                                    itemStyle: {
-                                                        shadowBlur: 10,
-                                                        shadowOffsetX: 0,
-                                                        shadowColor: 'rgba(0, 0, 0, 0.5)'
-                                                    }
-                                                }
-                                            }]
-                                        });
-                                    });
-                                </script>
-                                <!-- End Pie Chart -->
-                            </div>
+                                <div class="text-center mb-4">
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                </div>
+                            </form><!-- End floating Labels Form -->
 
                         </div>
-                    </div><!-- End Reports -->
 
-                    <!-- Recent Sales -->
-                    <div class="col-12">
-                        <div class="card recent-sales overflow-auto">
-
-                            <div class="filter">
-                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                    <li class="dropdown-header text-start">
-                                        <h6>Filter</h6>
-                                    </li>
-
-                                    <li><a class="dropdown-item" href="#">Today</a></li>
-                                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="card-body">
-                                <h5 class="card-title">Recent Sales <span>| Today</span></h5>
-
-                                <table class="table table-borderless datatable">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Customer</th>
-                                            <th scope="col">Product</th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row"><a href="#">#2457</a></th>
-                                            <td>Brandon Jacob</td>
-                                            <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                                            <td>$64</td>
-                                            <td><span class="badge bg-success">Approved</span></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><a href="#">#2147</a></th>
-                                            <td>Bridie Kessler</td>
-                                            <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
-                                            <td>$47</td>
-                                            <td><span class="badge bg-warning">Pending</span></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><a href="#">#2049</a></th>
-                                            <td>Ashleigh Langosh</td>
-                                            <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
-                                            <td>$147</td>
-                                            <td><span class="badge bg-success">Approved</span></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><a href="#">#2644</a></th>
-                                            <td>Angus Grady</td>
-                                            <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
-                                            <td>$67</td>
-                                            <td><span class="badge bg-danger">Rejected</span></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><a href="#">#2644</a></th>
-                                            <td>Raheem Lehner</td>
-                                            <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
-                                            <td>$165</td>
-                                            <td><span class="badge bg-success">Approved</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                            </div>
-
-                        </div>
-                    </div><!-- End Recent Sales -->
-
-                    <!-- Top Selling -->
-                    <div class="col-12">
-                        <div class="card top-selling overflow-auto">
-
-                            <div class="filter">
-                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                    <li class="dropdown-header text-start">
-                                        <h6>Filter</h6>
-                                    </li>
-
-                                    <li><a class="dropdown-item" href="#">Today</a></li>
-                                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="card-body pb-0">
-                                <h5 class="card-title">Top Selling <span>| Today</span></h5>
-
-                                <table class="table table-borderless">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Preview</th>
-                                            <th scope="col">Product</th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">Sold</th>
-                                            <th scope="col">Revenue</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                                            <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
-                                            <td>$64</td>
-                                            <td class="fw-bold">124</td>
-                                            <td>$5,828</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><a href="#"><img src="assets/img/product-2.jpg" alt=""></a></th>
-                                            <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
-                                            <td>$46</td>
-                                            <td class="fw-bold">98</td>
-                                            <td>$4,508</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><a href="#"><img src="assets/img/product-3.jpg" alt=""></a></th>
-                                            <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
-                                            <td>$59</td>
-                                            <td class="fw-bold">74</td>
-                                            <td>$4,366</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><a href="#"><img src="assets/img/product-4.jpg" alt=""></a></th>
-                                            <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
-                                            <td>$32</td>
-                                            <td class="fw-bold">63</td>
-                                            <td>$2,016</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><a href="#"><img src="assets/img/product-5.jpg" alt=""></a></th>
-                                            <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
-                                            <td>$79</td>
-                                            <td class="fw-bold">41</td>
-                                            <td>$3,239</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                            </div>
-
-                        </div>
-                    </div><!-- End Top Selling -->
-
-                </div>
+                    </div>
+                </div><!-- End Top Selling -->
             </div><!-- End Left side columns -->
 
             <!-- Right side columns -->

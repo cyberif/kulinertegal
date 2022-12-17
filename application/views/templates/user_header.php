@@ -6,8 +6,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title><?= $title; ?> - Kuliner Tegal</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <meta content="Kuliner Tegal" name="description">
+    <meta content="Kuliner Tegal" name="keywords">
 
     <!-- Favicons -->
     <link href="<?= base_url('assets/'); ?>img/Logoweb.png" rel="icon">
@@ -42,6 +42,7 @@
         .sub-judul,
         footer h5,
         h6,
+        .modal-title,
         .copyright {
             font-family: 'Lobster', cursive;
         }
@@ -87,14 +88,30 @@
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item text-secondary" href="<?= base_url('user/kritik'); ?>">Kritik & Saran</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item text-secondary" href="<?= base_url('auth/logout'); ?>">Log Out</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#modalLogout">Log Out</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- nav section end -->
+    <div class="modal fade" id="modalLogout" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered  modal-lg">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title text-warning">Information</h5>
+                    <button type="button" class="btn-close bg-warning" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span class="fs-6 text-light">Pilih <span class="fw-bold text-warning">Log Out</span> untuk mengakhiri session.</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <a type="button" class="btn btn-danger" href="<?= base_url('auth/logout'); ?>">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </div>

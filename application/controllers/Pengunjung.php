@@ -13,24 +13,21 @@ class Pengunjung extends CI_Controller
     function index()
     {
         $data = [
-            'beverages' => $this->ModelWarung->warungWhere(['id_wkategori' => 3])
+            'title' => "Home Page",
+            'foodsnbevs' => $this->ModelWarung->warungLimit(['id_wkategori' => 1])->result_array(),
+            'foods' => $this->ModelWarung->warungLimit(['id_wkategori' => 2])->result_array(),
+            'beverages' => $this->ModelWarung->warungLimit(['id_wkategori' => 3])->result_array()
         ];
-        $this->load->view('templates/pengunjung_header');
+        $this->load->view('templates/pengunjung_header', $data);
         $this->load->view('pengunjung/index', $data);
         $this->load->view('templates/pengunjung_footer');
     }
 
     function aboutus()
     {
-        $this->load->view('templates/pengunjung_header');
+        $data['title'] = "About Us";
+        $this->load->view('templates/pengunjung_header', $data);
         $this->load->view('pengunjung/aboutus');
-        $this->load->view('templates/pengunjung_footer');
-    }
-
-    function kritik()
-    {
-        $this->load->view('templates/pengunjung_header');
-        $this->load->view('pengunjung/kritik');
         $this->load->view('templates/pengunjung_footer');
     }
 }

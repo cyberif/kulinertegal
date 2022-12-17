@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                        <img src="<?= base_url('assets/'); ?>img/team/1.jpg" alt="Profile" class="rounded-circle">
+                        <img src="<?= base_url('assets/img/userprofile/' . $topbar['image']); ?>" alt="Profile" class="rounded-circle">
                         <h2><?= $user['nama']; ?></h2>
                         <h3><?= $user['email']; ?></h3>
                     </div>
@@ -74,7 +74,7 @@
                                     <div class="row mb-3">
                                         <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <img src="<?= base_url('assets/'); ?>img/team/1.jpg" alt="Profile">
+                                            <img src="<?= base_url('assets/img/userprofile/' . $topbar['image']); ?>" alt="Profile">
                                             <div class="pt-2">
                                                 <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
                                                 <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
@@ -85,7 +85,7 @@
                                     <div class="row mb-3">
                                         <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="fullName" type="text" class="form-control" id="fullName" value="Kevin Anderson">
+                                            <input name="fullName" type="text" class="form-control" id="fullName" value="<?= $user['nama']; ?>">
                                         </div>
                                     </div>
 
