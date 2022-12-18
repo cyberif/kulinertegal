@@ -11,9 +11,10 @@
                 <div class="card">
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                        <img src="<?= base_url('assets/img/userprofile/' . $topbar['image']); ?>" alt="Profile" class="rounded-circle">
+                        <img src="<?= base_url('assets/img/userprofile/' . $user['image']); ?>" alt="Profile" class="rounded-circle">
                         <h2><?= $user['nama']; ?></h2>
                         <h3><?= $user['email']; ?></h3>
+                        <a href="<?= base_url('warung/warungku/' . $user['id']); ?>" class="btn btn-primary">Warungku</a>
                     </div>
                 </div>
 

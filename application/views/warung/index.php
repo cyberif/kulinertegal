@@ -47,7 +47,7 @@
                         </div>
                     </div><!-- End Paket Card -->
 
-                    <!-- Reports -->
+                    <!-- CHART -->
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
@@ -97,9 +97,65 @@
                                 <!-- End Pie Chart -->
                             </div>
                         </div>
-                    </div><!-- End Reports -->
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Menu & Paket <span>/Today</span></h5>
+
+                                <!-- Donut Chart -->
+                                <div id="donutChart" style="min-height: 400px;" class="echart"></div>
+
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", () => {
+                                        echarts.init(document.querySelector("#donutChart")).setOption({
+                                            tooltip: {
+                                                trigger: 'item'
+                                            },
+                                            legend: {
+                                                top: '5%',
+                                                left: 'center'
+                                            },
+                                            series: [{
+                                                name: 'Jumlah',
+                                                type: 'pie',
+                                                radius: ['40%', '70%'],
+                                                avoidLabelOverlap: false,
+                                                label: {
+                                                    show: false,
+                                                    position: 'center'
+                                                },
+                                                emphasis: {
+                                                    label: {
+                                                        show: true,
+                                                        fontSize: '18',
+                                                        fontWeight: 'bold'
+                                                    }
+                                                },
+                                                labelLine: {
+                                                    show: false
+                                                },
+                                                data: [{
+                                                        value: <?= $jmlMenu; ?>,
+                                                        name: 'Menu'
+                                                    },
+                                                    {
+                                                        value: <?= $jmlPaket; ?>,
+                                                        name: 'Paket'
+                                                    }
+                                                ]
+                                            }]
+                                        });
+                                    });
+                                </script>
+                                <!-- End Donut Chart -->
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End CHARTS -->
                 </div>
-            </div><!-- End Left side columns -->
+            </div>
+            <!-- End Left side columns -->
 
             <!-- Right side columns -->
             <!-- <div class="col-lg-4">

@@ -182,6 +182,23 @@ class Warung extends CI_Controller
     }
     //END PAKET
 
+    public function warungku($id)
+    {
+        $email = $this->session->userdata('email');
+
+        $data = [
+            'title' => 'Warungku',
+            'topbar' => $this->ModelUser->cekUser(['email' => $email])->row_array(),
+            'user' => $this->ModelUser->cekUser(['email' => $email])->row_array(),
+            'warung' => $this->ModelWarung->warungWhereRow(['id' => $id])
+
+        ];
+        $this->load->view('templates/warung_header', $data);
+        $this->load->view('warung/topbar', $data);
+        $this->load->view('warung/sidebar', $data);
+        $this->load->view('warung/warungku', $data);
+        $this->load->view('templates/warung_footer');
+    }
     public function profile()
     {
         $email = $this->session->userdata('email');
