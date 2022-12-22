@@ -22,10 +22,5 @@
             </div>
         <?php endforeach ?>
     </div>
-    <div class="row">
-        <div class="col d-flex justify-content-center">
-            <a class="btn btn-warning rounded-pill text-dark fw-bold" href="/">See More</a>
-        </div>
-    </div>
 </div>
 <!-- END Warung -->
