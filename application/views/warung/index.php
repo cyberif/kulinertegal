@@ -52,55 +52,6 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Menu & Paket <span>/Today</span></h5>
-                                <!-- Pie Chart -->
-                                <div id="pieChart" style="min-height: 400px;" class="echart"></div>
-
-                                <script>
-                                    document.addEventListener("DOMContentLoaded", () => {
-                                        echarts.init(document.querySelector("#pieChart")).setOption({
-                                            title: {
-                                                text: 'Menu & Paket',
-                                                subtext: 'Real Data',
-                                                left: 'center'
-                                            },
-                                            tooltip: {
-                                                trigger: 'item'
-                                            },
-                                            legend: {
-                                                orient: 'vertical',
-                                                left: 'left'
-                                            },
-                                            series: [{
-                                                name: 'Jumlah',
-                                                type: 'pie',
-                                                radius: '50%',
-                                                data: [{
-                                                        value: <?= $jmlMenu; ?>,
-                                                        name: 'Menu'
-                                                    },
-                                                    {
-                                                        value: <?= $jmlPaket; ?>,
-                                                        name: 'Paket'
-                                                    }
-                                                ],
-                                                emphasis: {
-                                                    itemStyle: {
-                                                        shadowBlur: 10,
-                                                        shadowOffsetX: 0,
-                                                        shadowColor: 'rgba(0, 0, 0, 0.5)'
-                                                    }
-                                                }
-                                            }]
-                                        });
-                                    });
-                                </script>
-                                <!-- End Pie Chart -->
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Menu & Paket <span>/Today</span></h5>
 
                                 <!-- Donut Chart -->
                                 <div id="donutChart" style="min-height: 400px;" class="echart"></div>

@@ -41,4 +41,11 @@ class ModelWarung extends CI_Model
         $query = $this->db->get_where('warung', $where, 4);
         return $query;
     }
+
+    public function edit_warungku_proses($data = null)
+    {
+        $id = $this->input->post('id');
+        $this->db->where('id', $id);
+        $this->db->update('warung', $data);
+    }
 }

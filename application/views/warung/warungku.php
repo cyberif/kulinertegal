@@ -20,13 +20,13 @@
                     }
                     ?>
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-                        <img src="<?= base_url('assets/img/warung/' . $warung['image']); ?>" alt="Profile" class="rounded-circle">
+                        <img src="<?= base_url('assets/img/warung/' . $warung['image']); ?>" alt="<?= $warung['image']; ?>" class="rounded">
                         <h2><?= $warung['nama']; ?></h2>
                         <p><?= $kategori; ?></p>
                         <h3><?= $warung['alamat']; ?></h3>
                         <h3>Buka <?= $warung['hari_buka']; ?></h3>
                         <h3><?= $warung['waktu_buka']; ?> - <?= $warung['waktu_tutup']; ?></h3>
-                        <a href="<?= base_url('warung/editWarungku/' . $user['id']); ?>" class="btn btn-primary">Edit Warungku</a>
+                        <a href="<?= base_url('warung/edit_warungku/' . $user['id']); ?>" class="btn btn-primary">Edit Warungku</a>
                     </div>
                 </div>
 
@@ -43,6 +43,7 @@
                 <div class="card">
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
                         <h2 class="mb-1">Go Food</h2>
+                        <p><?= $warung['gofood']; ?></p>
                         <a href="<?= $warung['gofood']; ?>" target="_blank" class="mt-0 mb-0">Klik disini</a>
                     </div>
                 </div>

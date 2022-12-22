@@ -6,24 +6,10 @@
     <section class="section dashboard">
         <div class="row">
             <!-- Left side columns -->
-            <div class="col-lg-8">
+            <div class="col-lg-11">
                 <!-- Top Selling -->
                 <div class="col-12">
                     <div class="card top-selling overflow-auto">
-
-                        <div class="filter">
-                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                <li class="dropdown-header text-start">
-                                    <h6>Filter</h6>
-                                </li>
-
-                                <li><a class="dropdown-item" href="">Nama</a></li>
-                                <li><a class="dropdown-item" href="">ID</a></li>
-                                <li><a class="dropdown-item" href="">Email</a></li>
-                                <li><a class="dropdown-item" href="#">Date Created</a></li>
-                            </ul>
-                        </div>
 
                         <div class="card-body pb-0">
                             <h5 class="card-title">Warung <span>| <?= $jmlWarung; ?> results</span></h5>

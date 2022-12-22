@@ -7,7 +7,7 @@
                     <a href="<?= base_url('user'); ?>" class="text-light fs-6">Home</a>
                     <a href="<?= base_url('user/warung'); ?>" class="text-light fs-6">Warung</a>
                     <a href="<?= base_url('user/aboutus'); ?>" class="text-light fs-6">About Us</a>
-                    <a href="<?= base_url('user/kritik'); ?>" class="text-light fs-6">Kritik & Saran</a>
+                    <a href="<?= base_url('user/profile'); ?>" class="text-light fs-6">Profile</a>
                 </div>
 
                 <div class="col-lg-5 d-flex flex-column align-items-center">

@@ -39,4 +39,10 @@ class ModelUser extends CI_Model
         $this->db->where('id', $id);
         $this->db->update('user', $data);
     }
+    public function editProfile_proses($data = null)
+    {
+        $email = $this->input->post('email');
+        $this->db->where('email', $email);
+        $this->db->update('user', $data);
+    }
 }

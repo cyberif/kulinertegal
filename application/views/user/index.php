@@ -1,3 +1,10 @@
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col-lg-10 ms-auto">
+            <?= $this->session->flashdata('pesan'); ?>
+        </div>
+    </div>
+</div>
 <!-- carousel image START -->
 <div class="container-fluid bg-dark text-light">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -10,22 +17,22 @@
             <div class="carousel-item active" data-bs-interval="10000">
                 <img src="assets/img/cafe.jpg" class="d-block w-100" alt="carousel-1" style="height: 70vh; filter: blur(2.5px) brightness(70%)" />
                 <div class="carousel-caption">
-                    <h5>Kuliner Tegal</h5>
+                    <h5>✨ Kuliner Tegal ✨</h5>
                     <p>Website Informasi Tentang Kuliner</p>
                     <a href="<?= base_url('pengunjung/aboutus') ?>" class="btn btn-warning text-dark fw-bold">About Us</a>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="10000">
-                <img src="assets/img/cafe.jpg" class="d-block w-100" alt="carousel-2" style="height: 70vh; filter: blur(2.5px)" />
+                <img src="assets/img/cafe.jpg" class="d-block w-100" alt="carousel-2" style="height: 70vh; filter: blur(2.5px) brightness(70%)" />
                 <div class="carousel-caption">
-                    <h5>Foods</h5>
+                    <h5>✨ Foods ✨</h5>
                     <p>Tersedia Berbagai Macam Makanan</p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="10000">
-                <img src="assets/img/cafe.jpg" class="d-block w-100" alt="carousel-3" style="height: 70vh; filter: blur(2.5px)" />
+                <img src="assets/img/cafe.jpg" class="d-block w-100" alt="carousel-3" style="height: 70vh; filter: blur(2.5px) brightness(70%)" />
                 <div class="carousel-caption">
-                    <h5>Beverages</h5>
+                    <h5>✨ Beverages ✨</h5>
                     <p>Tersedia Berbagai Macam Minuman</p>
                 </div>
             </div>

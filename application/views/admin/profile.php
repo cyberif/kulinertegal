@@ -6,12 +6,13 @@
 
     <section class="section profile">
         <div class="row">
+            <?= $this->session->flashdata('pesan'); ?>
             <div class="col-xl-4">
 
                 <div class="card">
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                        <img src="<?= base_url('assets/'); ?>img/team/1.jpg" alt="Profile" class="rounded-circle">
+                        <img src="<?= base_url('assets/img/userprofile/' . $user['image']); ?>" alt="Profile" class="rounded-circle">
                         <h2><?= $user['nama']; ?></h2>
                         <h3><?= $user['email']; ?></h3>
                     </div>
@@ -32,10 +33,6 @@
 
                             <li class="nav-item">
                                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
-                            </li>
-
-                            <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
                             </li>
 
                         </ul>
@@ -70,22 +67,30 @@
                             <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                                 <!-- Profile Edit Form -->
-                                <form>
-                                    <div class="row mb-3">
-                                        <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <img src="<?= base_url('assets/'); ?>img/team/1.jpg" alt="Profile">
-                                            <div class="pt-2">
-                                                <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-                                                <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
-                                            </div>
+                                <div class="row mb-3">
+                                    <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <img src="<?= base_url('assets/img/userprofile/' . $user['image']); ?>" alt="Profile">
+                                        <div class="pt-2">
+                                            <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image" data-bs-toggle="modal" data-bs-target="#modalEditImg"><i class="bi bi-upload"></i></a>
+                                            <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
                                         </div>
                                     </div>
+                                </div>
 
+                                <form method="POST" action="<?= base_url('admin/profile'); ?>">
                                     <div class="row mb-3">
+                                        <input type="hidden" name="id" value="<?= $user['id']; ?>">
+                                        <input type="hidden" name="is_active" value="<?= $user['is_active']; ?>">
+                                        <input type="hidden" name="password" value="<?= $user['password']; ?>">
+                                        <input type="hidden" name="image" value="<?= $user['image']; ?>">
+                                        <input type="hidden" name="date_created" value="<?= $user['date_created']; ?>">
+                                        <input type="hidden" name="email" value="<?= $user['email']; ?>">
+                                        <input type="hidden" name="role_id" value="<?= $user['role_id']; ?>">
                                         <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="fullName" type="text" class="form-control" id="fullName" value="Kevin Anderson">
+                                            <input name="nama" type="text" class="form-control" id="nama" value="<?= $user['nama']; ?>">
+                                            <?= form_error('nama', '<small class="text-danger ps-3">', '</small>'); ?>
                                         </div>
                                     </div>
 
@@ -93,38 +98,6 @@
                                         <button type="submit" class="btn btn-primary">Save Changes</button>
                                     </div>
                                 </form><!-- End Profile Edit Form -->
-
-                            </div>
-
-                            <div class="tab-pane fade pt-3" id="profile-change-password">
-                                <!-- Change Password Form -->
-                                <form>
-
-                                    <div class="row mb-3">
-                                        <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="password" type="password" class="form-control" id="currentPassword">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="newpassword" type="password" class="form-control" id="newPassword">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="renewpassword" type="password" class="form-control" id="renewPassword">
-                                        </div>
-                                    </div>
-
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary">Change Password</button>
-                                    </div>
-                                </form><!-- End Change Password Form -->
 
                             </div>
 
@@ -136,5 +109,35 @@
             </div>
         </div>
     </section>
+    <div class="modal fade" id="modalEditImg" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Foto Profil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="POST" action="<?= base_url('admin/edit_profile_img'); ?>">
+                    <div class="modal-body">
+                        <div class="row mb-3">
+                            <input type="hidden" name="id" value="<?= $user['id']; ?>">
+                            <input type="hidden" name="is_active" value="<?= $user['is_active']; ?>">
+                            <input type="hidden" name="password" value="<?= $user['password']; ?>">
+                            <input type="hidden" name="date_created" value="<?= $user['date_created']; ?>">
+                            <input type="hidden" name="email" value="<?= $user['email']; ?>">
+                            <input type="hidden" name="role_id" value="<?= $user['role_id']; ?>">
+                            <input type="hidden" name="nama" value="<?= $user['nama']; ?>">
+                            <div class="col-lg-11">
+                                <input name="image" type="file">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form><!-- End Profile Edit Form -->
+            </div>
+        </div>
+    </div>
 
 </main><!-- End #main -->

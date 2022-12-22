@@ -78,17 +78,8 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="<?= base_url('user/aboutus'); ?>">About Us</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Others
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item text-secondary" href="<?= base_url('user/profile'); ?>">Profile</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item text-secondary" href="<?= base_url('user/kritik'); ?>">Kritik & Saran</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="<?= base_url('user/profile'); ?>">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#modalLogout">Log Out</a>

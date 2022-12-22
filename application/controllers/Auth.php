@@ -54,8 +54,9 @@ class Auth extends CI_Controller
                         if ($user['image'] == 'default.jpg') {
                             $this->session->set_flashdata(
                                 'pesan',
-                                '<div class="alert alert-info alert-message" role="alert">
-                                    Silahkan ubah profile anda untuk ubah photo profil
+                                '<div class="alert alert-warning bg-warning border-0 alert-dismissible fade show" role="alert">
+                                <b>Selamat Datang! </b>di website Kuliner Tegal. Ubah profil di menu profile.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>'
                             );
                             redirect('user');

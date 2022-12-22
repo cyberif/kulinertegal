@@ -28,9 +28,8 @@ class Warung extends CI_Controller
     //MENU
     public function tambahMenu()
     {
-        $this->form_validation->set_rules('nama', 'Nama Menu', 'required|is_unique[wmenu.nama]', [
-            'required' => 'Nama harus diisi!',
-            'is_unique' => 'Menu Sudah Ada!!'
+        $this->form_validation->set_rules('nama', 'Nama Menu', 'required', [
+            'required' => 'Nama harus diisi!'
         ]);
         $this->form_validation->set_rules('harga', 'Harga Menu', 'required', [
             'required' => 'Harga harus diisi!',
@@ -185,7 +184,6 @@ class Warung extends CI_Controller
     public function warungku($id)
     {
         $email = $this->session->userdata('email');
-
         $data = [
             'title' => 'Warungku',
             'topbar' => $this->ModelUser->cekUser(['email' => $email])->row_array(),
@@ -199,19 +197,122 @@ class Warung extends CI_Controller
         $this->load->view('warung/warungku', $data);
         $this->load->view('templates/warung_footer');
     }
+
+    public function edit_warungku($id)
+    {
+
+        $this->form_validation->set_rules('nama', 'Nama', 'required', [
+            'required' => 'Nama belum diisi!'
+        ]);
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required', [
+            'required' => 'Alamat belum diisi!'
+        ]);
+        $this->form_validation->set_rules('hari_buka', 'Hari Buka', 'required', [
+            'required' => 'Hari Buka belum diisi!'
+        ]);
+        $this->form_validation->set_rules('waktu_buka', 'Jam Buka', 'required', [
+            'required' => 'Jam Buka belum diisi!'
+        ]);
+        $this->form_validation->set_rules('waktu_tutup', 'Jam Tutup', 'required', [
+            'required' => 'Jam Tutup belum diisi!'
+        ]);
+        $this->form_validation->set_rules('no_wa', 'Whatsapp', 'required', [
+            'required' => 'Whatsapp belum diisi!'
+        ]);
+        $this->form_validation->set_rules('instagram', 'Instagram', 'required', [
+            'required' => 'Instagram belum diisi!'
+        ]);
+        $this->form_validation->set_rules('gofood', 'Go Food', 'required', [
+            'required' => 'Link Go Food belum diisi!'
+        ]);
+        $this->form_validation->set_rules('image', 'Image', 'required', [
+            'required' => 'Gambar belum diisi!'
+        ]);
+
+
+
+        if ($this->form_validation->run() == false) {
+            $email = $this->session->userdata('email');
+            $data = [
+                'title' => 'Edit Warungku',
+                'topbar' => $this->ModelUser->cekUser(['email' => $email])->row_array(),
+                'user' => $this->ModelUser->cekUser(['email' => $email])->row_array(),
+                'warung' => $this->ModelWarung->warungWhereRow(['id' => $id])
+            ];
+            $this->load->view('templates/warung_header', $data);
+            $this->load->view('warung/topbar', $data);
+            $this->load->view('warung/sidebar', $data);
+            $this->load->view('warung/edit_warungku', $data);
+            $this->load->view('templates/warung_footer');
+        } else {
+            $data = [
+                'no' => $this->input->post('no'),
+                'id_wkategori' => $this->input->post('id_wkategori'),
+                'wilayah' => $this->input->post('wilayah'),
+                'date_created' => $this->input->post('date_created'),
+                'nama' => htmlspecialchars($this->input->post('nama', true)),
+                'alamat' => htmlspecialchars($this->input->post('alamat', true)),
+                'hari_buka' => htmlspecialchars($this->input->post('hari_buka', true)),
+                'waktu_buka' => htmlspecialchars($this->input->post('waktu_buka', true)),
+                'waktu_tutup' => htmlspecialchars($this->input->post('waktu_tutup', true)),
+                'no_wa' => htmlspecialchars($this->input->post('no_wa', true)),
+                'instagram' => htmlspecialchars($this->input->post('instagram', true)),
+                'gofood' => htmlspecialchars($this->input->post('gofood', true)),
+                'image' => htmlspecialchars($this->input->post('image', true))
+            ];
+
+            $this->ModelWarung->edit_warungku_proses($data);
+            $this->session->set_flashdata(
+                'pesan',
+                '<div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+                    <i class="bi bi-check-circle me-1"></i>
+                    <b>Sukses!</b> Warungku telah diperbarui.
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>'
+            );
+            redirect('warung/profile');
+        }
+    }
+
     public function profile()
     {
-        $email = $this->session->userdata('email');
-        $data = [
-            'title' => 'Profile',
-            'topbar' => $this->ModelUser->cekUser(['email' => $email])->row_array(),
-            'user' => $this->ModelUser->cekUser(['email' => $email])->row_array()
+        $this->form_validation->set_rules('nama', 'Nama Lengkap', 'required', [
+            'required' => 'Nama belum diisi!'
+        ]);
 
-        ];
-        $this->load->view('templates/warung_header', $data);
-        $this->load->view('warung/topbar', $data);
-        $this->load->view('warung/sidebar', $data);
-        $this->load->view('warung/profile', $data);
-        $this->load->view('templates/warung_footer');
+        if ($this->form_validation->run() == false) {
+            $email = $this->session->userdata('email');
+            $data = [
+                'title' => 'Profile',
+                'topbar' => $this->ModelUser->cekUser(['email' => $email])->row_array(),
+                'user' => $this->ModelUser->cekUser(['email' => $email])->row_array()
+            ];
+            $this->load->view('templates/warung_header', $data);
+            $this->load->view('warung/topbar', $data);
+            $this->load->view('warung/sidebar', $data);
+            $this->load->view('warung/profile', $data);
+            $this->load->view('templates/warung_footer');
+        } else {
+            $data = [
+                'id' => $this->input->post('id'),
+                'nama' => htmlspecialchars($this->input->post('nama', true)),
+                'image' => $this->input->post('image'),
+                'password' => $this->input->post('password'),
+                'role_id' => $this->input->post('role_id'),
+                'is_active' => $this->input->post('is_active'),
+                'date_created' => $this->input->post('date_created')
+            ];
+
+            $this->ModelUser->editProfile_proses($data);
+            $this->session->set_flashdata(
+                'pesan',
+                '<div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+                    <i class="bi bi-check-circle me-1"></i>
+                    <b>Sukses!</b> Profil telah diperbarui.
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>'
+            );
+            redirect('warung/profile');
+        }
     }
 }
