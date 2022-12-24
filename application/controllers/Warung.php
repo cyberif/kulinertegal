@@ -103,9 +103,8 @@ class Warung extends CI_Controller
     //PAKET
     public function tambahPaket()
     {
-        $this->form_validation->set_rules('nama', 'Nama Paket', 'required|is_unique[wpaket.nama]', [
-            'required' => 'Nama harus diisi!',
-            'is_unique' => 'Paket Sudah Ada!!'
+        $this->form_validation->set_rules('nama', 'Nama Paket', 'required', [
+            'required' => 'Nama harus diisi!'
         ]);
         $this->form_validation->set_rules('rincian', 'Rincian Paket', 'required', [
             'required' => 'Rincian harus diisi!',
